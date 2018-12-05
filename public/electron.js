@@ -7,21 +7,9 @@ const isDev = require("electron-is-dev");
 
 let mainWindow;
 
-require("update-electron-app")({
-    repo: "kitze/react-electron-example",
-    updateInterval: "1 hour"
-});
-
 function createWindow() {
     mainWindow = new BrowserWindow({width: 900, height: 680});
-    // mainWindow.loadURL(
-    //   isDev
-    //     ? "http://localhost:3000"
-    //     : `file://${path.join(__dirname, "../build/index.html")}`
-    // );
-    // mainWindow.loadURL('./index.html');
-    // mainWindow.loadUrl('file://' + __dirname + 'public/index.html');
-    // mainWindow.on("closed", () => (mainWindow = null));
+
     mainWindow.loadURL(
         isDev
             ? "http://localhost:3000"
