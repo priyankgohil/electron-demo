@@ -25,7 +25,7 @@ class Home extends Component {
         }
         return (
             <div>
-                <h1 style={{color: '#000'}}>Home</h1>
+                <h1 style={{color: '#000'}}>Deribit Desktop App : Dashboard</h1>
                 <Link to="/setPassCode">Set Up Passcode</Link><br/><br/>
                 <Link to="/accountOverview">Skip</Link>
             </div>
