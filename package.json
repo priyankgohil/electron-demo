@@ -2,6 +2,7 @@
   "name": "electron-react-deribit",
   "version": "0.1.0",
   "private": true,
+  "description": "Electron application for Deribit",
   "dependencies": {
     "electron-is-dev": "^1.0.1",
     "electron-log": "^2.2.17",
@@ -20,7 +21,13 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "electron-pack": "build -c.extraMetadata.main=public/electron.js",
+    "preelectron-pack": "yarn build",
+    "dist-all": "electron-builder -mwl"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +47,63 @@
     "electron": "^3.0.10",
     "electron-builder": "^20.38.2",
     "wait-on": "^3.2.0"
+  },
+  "build  ": {
+    "asar": false,
+    "productName": "ElectronDeribitApp",
+    "appId": "com.example.deribit",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/public"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "priyank57",
+      "repo": "electron-demo",
+      "private": false
+    },
+    "extends": null
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyankgohil/electron-demo"
+  },
+  "author": {
+    "name": "Levaral",
+    "email": "mail@levaral.com",
+    "url": "https://levaral.com"
   }
 }
