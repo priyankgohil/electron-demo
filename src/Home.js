@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 
-const Store = require('electron-store');
+const Store = window.require('electron-store');
 const store = new Store();
 
 class Home extends Component {
@@ -26,7 +26,7 @@ class Home extends Component {
         return (
             <div>
                 <h1 style={{color: '#000'}}>Home</h1>
-                <Link to="/setPassCode">Set Up Passcode</Link>
+                <Link to="/setPassCode">Set Up Passcode</Link><br/><br/>
                 <Link to="/accountOverview">Skip</Link>
             </div>
         );

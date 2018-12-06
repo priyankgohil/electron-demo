@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-const Store = require('electron-store');
+const Store = window.require('electron-store');
 const store = new Store();
 
 class ApiCredentialForm extends Component {

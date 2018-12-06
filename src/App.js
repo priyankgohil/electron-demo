@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 // import {
 //     Route,
@@ -7,10 +7,10 @@ import './App.css';
 //     Redirect,
 //     Link
 // } from "react-router-dom";
+import SetUpPassCode from "./SetUpPassCode";
+import Home from "./Home";
 // import SetUpPassCode from "./SetUpPassCode";
-// import Home from "./Home";
-// import SetUpPassCode from "./SetUpPassCode";
-// import ApiCredentialForm from "./component/ApiCredentialForm";
+import ApiCredentialForm from "./component/ApiCredentialForm";
 // import AccountOverview from "./AccountOverview";
 // // import {Switch, Route} from 'react-router-dom'
 // // import Home from "./pages/Home";
@@ -31,9 +31,7 @@ import './App.css';
 
 class App extends Component {
     render() {
-        return (<div>
-            <h1>App</h1>
-        </div>)
+        return (<Home></Home>)
     }
 }
 

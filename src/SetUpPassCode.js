@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 
-const Store = require('electron-store');
+const Store = window.require('electron-store');
 const store = new Store();
 
 class SetUpPassCode extends Component {
@@ -16,7 +16,7 @@ class SetUpPassCode extends Component {
         // let authData = store.get('authData');
         return (
             <div>
-                <h1 style={{color: '#000'}}>Set up Passcode</h1>
+                <h1 style={{color: '#000'}}>Set up Passcode</h1><br/><br/>
                 <Link to="/">Skip</Link>
             </div>
         );
